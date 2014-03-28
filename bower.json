@@ -5,9 +5,10 @@
     "sass-bootstrap": "~3.0.2",
     "jquery": "~2.0.3",
     "lodash": "~2.1.0",
-    "backbone": "~1.0.0",
+    "backbone": "~1.1.2",
     "modernizr": "~2.6.2",
-    "backbone-query-parameters": "master"
+    "backbone-query-parameters": "master",
+    "backbone-pageable": "1.4.5"
   },
   "devDependencies": {}
 }

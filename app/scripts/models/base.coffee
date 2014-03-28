@@ -12,11 +12,14 @@ class PagerDash.Models.BaseModel extends Backbone.Model
   #   Backbone.Model.prototype.destroy.call(this, attributes, options)
 
 
-class PagerDash.Collections.BaseCollection extends Backbone.Collection
+class PagerDash.Collections.BaseCollection extends Backbone.PageableCollection
   initialize: (models, options) ->
     @fetchesFailed = 0
 
   refreshInterval: 300
+
+  parseLinks: (response, options) ->
+    @state.totalRecords = response.total
 
   # create: (attributes, options) ->
   #   options ||= {}

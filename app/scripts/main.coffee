@@ -34,7 +34,7 @@ window.PagerDash =
 
   beginSync: (options) ->
     console.log("Initial sync of all collections")
-    PagerDash.incidents.fetch(@fetchOptions)
+    PagerDash.incidents.getPage(1, @fetchOptions)
 
 
 # All navigation that is relative should be processed by the router.

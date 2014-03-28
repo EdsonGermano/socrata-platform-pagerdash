@@ -27,6 +27,23 @@ class PagerDash.Models.Incident extends PagerDash.Models.BaseModel
 
 class PagerDash.Collections.Incidents extends PagerDash.Collections.BaseCollection
   model: PagerDash.Models.Incident
+  state:
+    firstPage: 0
+    totalRecords: 500
+    pageSize: 100
+    offset: () ->
+      this.state.currentPage * this.state.pageSize
+
+  queryParams:
+    pageSize: "limit"
+    totalPages: null
+    totalRecords: null
+    sortKey: null
+    order: null
+    currentPage: null
+    offset: ->
+      @state.currentPage * @state.pageSize
+
   initialize: (models, options) ->
     super(models, options)
     this.url = 'pagerduty/incidents'
